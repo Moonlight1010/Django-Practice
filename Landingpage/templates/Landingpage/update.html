@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% block main%}
+{%load crispy_forms_tags%}
+{%include 'partials/messages.html'%}
+<div class="col-12">
+  <div class="card my-4" style="width: 18rem;">
+    <div class="card-body">
+      <form action="" method="POST">
+        {% csrf_token%}
+        {{form |crispy}}
+        <input type="submit" class="btn btn-outline-info" value="Update">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
